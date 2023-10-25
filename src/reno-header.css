@@ -1,0 +1,252 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.header_min_w{
+    min-width: 24.625rem;
+}
+.z-100{
+    z-index: 100;
+}
+*{
+    @apply box-content;
+}
+a{
+    @apply cursor-pointer;
+}
+.menu-tree-container .menu{
+    @apply hidden lg:block;
+    @apply absolute left-0 top-20 w-full bg-white;
+    @apply lg:static lg:flex ;
+}
+.active{
+    @apply block !important;
+
+}
+
+
+.menu-tree-container .menu-item{
+    @apply lg:relative;
+}   
+.menu-tree-container .sub-menu {
+    
+    @apply lg:absolute gap-4 left-full  w-full lg:w-80 top-0;
+    @apply bg-white;
+    @apply py-3 ;
+    @apply lg:shadow-lg;
+    
+    
+}  
+.menu-tree-container .sub-menu-0 {
+    @apply  top-20 left-0 ;
+} 
+/*
+    LINK 
+*/
+.menu-tree-container .link_label_container{
+    @apply flex gap-5 justify-between items-stretch py-5 px-4;
+    @apply hover:bg-slate-100;
+    @apply lg:rounded-md;
+    @apply mx-4;
+   
+}
+.menu-tree-container .menu > li .link_label_container {
+    @apply border-b  ;
+    @apply lg:border-0 ;
+}
+.menu-tree-container .menu > li > .link_label_container {
+    @apply lg:hover:bg-inherit;
+    @apply mx-0;
+} 
+
+
+
+
+.link_label_container > *{
+
+    @apply flex items-center  ;
+}
+.link_label_container a{
+    @apply  flex justify-start items-center gap-3;
+    @apply hover:no-underline active:text-gray-800 text-gray-800;
+}
+
+ /* arrow */
+.link_label_container .arrow_icon{
+    @apply mr-2 ;
+}
+.link_label_container .arrow_icon > *{
+    @apply h-2 !important;
+    @apply w-auto rotate-90;
+}
+
+.link_label_container[aria-expanded="true"] .arrow_icon > *{
+    @apply -rotate-90 ;
+}
+.sub-menu .link_label_container[aria-expanded="true"] .arrow_icon > *, .sub-menu .link_label_container[aria-expanded="false"] .arrow_icon > * {
+    @apply rotate-0 ;
+}
+.sub-menu a{
+    @apply hover:underline;
+}
+
+
+
+/* 
+ * DRROP DOWN
+ */
+.r_dropdown_menu{
+    @apply hidden;
+    @apply  transition-all duration-100 transform ;
+    
+}
+
+.r_dropdown_menu.active{
+    @apply block;
+    @apply  duration-300 ;
+}
+
+
+
+/*
+    Tree
+*/
+
+ .tree .sub-menu{
+    @apply lg:fixed lg:top-0 lg:pt-0;
+    @apply lg:h-body;
+    @apply lg:w-sidebar;
+}
+.tree .sub-menu-0{
+    @apply   lg:left-0  lg:bottom-0 lg:top-24;
+    @apply lg:w-1/5;
+}
+.tree .sub-menu-1 {
+    @apply lg:overflow-x-clip lg:overflow-y-scroll;
+    @apply lg:px-4;
+}
+
+
+
+.tree .sub-menu-1 .sub-menu{
+    @apply lg:relative;
+    @apply lg:h-full;
+    @apply lg:grid lg:grid-cols-3  lg:gap-y-1 lg:gap-x-2 lg:left-0;
+    @apply lg:shadow-none;
+} 
+
+.tree .sub-menu-1 .active{
+    @apply lg:grid lg:grid-cols-3  !important;
+
+}
+
+.tree .sub-menu-1 > .menu-item{
+
+    @apply lg:border-b !important;
+    @apply lg:px-0 lg:py-3;
+}
+.tree .sub-menu-1 > .menu-item > .link_label_container    {
+    @apply lg:font-bold;
+}
+.tree .sub-menu-1 > .menu-item > .link_label_container   a {
+
+    color: rgb(167, 108, 0) !important;
+}
+.tree .sub-menu-1 > .menu-item > .link_label_container   .arrow_icon {
+    @apply lg:hidden;
+}
+
+.tree .sub-menu-1  .link_label_container{
+    @apply lg:p-1 lg:mx-0;
+    @apply lg:hover:bg-white;
+}
+
+@media (max-width:1024px) {
+    .tree .sub-menu-0 .sub-menu{
+        @apply fixed right-0 left-0 top-0 h-body bg-white z-30 overflow-x-clip overflow-y-scroll ;
+        
+    }
+}
+
+
+/*
+* Banner
+*/ 
+.tree .menu-banner{
+    @apply hidden ;
+}
+.tree .menu-banner{
+    @apply  h-40 lg:flex items-center bg-slate-200;
+}
+.tree .menu-banner .caption{
+    @apply flex gap-x-2 items-center;
+    @apply bg-white p-3;
+}
+.tree .menu-banner .caption img{
+    @apply h-12 w-auto;
+}
+.tree .menu-banner .caption-content{
+    @apply grid;
+}
+.tree .menu-banner .menu-title{
+    @apply font-bold;
+}
+
+.tree .close_mega_menu{
+    @apply bg-white h-12 w-12  flex justify-center items-center ;
+    @apply shadow-md ;
+}
+.tree .close_mega_menu img{
+    @apply h-4 w-auto;
+}
+.close_mega_menu{
+    @apply absolute top-2 right-5;
+}
+
+/*
+    PREVIOUS
+*/
+.r_prevoius{
+    @apply hover:bg-slate-200  mx-2 h-10 rounded-full w-10 ;
+}
+
+
+
+
+/**
+* additional menu
+*/
+
+.weglot-parent-menu-item .sub-menu{
+    @apply hidden;
+ 
+    
+}
+.menu-btn a{
+    background: #2A312A;
+    color: #fff!important;
+    border-radius: 5px;
+    margin-left: 10px!important;
+    font-weight: 700!important;
+}
+
+.menu-cta-container .menu{
+    @apply flex gap-3;
+}
+.menu-cta-container .menu-item {
+    @apply relative ;
+}
+.menu-cta-container .menu-item a{
+    @apply flex px-2 lg:px-7 py-2  lg:py-3;
+}
+.menu-cta-container .sub-menu a{
+    @apply  hover:bg-slate-50;
+}
+
+.rotate90{
+    @apply rotate-90;
+}
+.menu-cta-container .sub-menu a{
+    @apply bg-white ;
+    box-shadow: 0px 0px 17px 0px rgb(199, 199, 199);
+}
