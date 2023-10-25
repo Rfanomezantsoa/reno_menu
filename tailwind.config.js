@@ -10,7 +10,8 @@ export default {
         'blue': 'blue',
       },
       height :{
-        body: 'calc(100vh - 6rem)'
+        body: 'calc(100vh - 6rem)',
+        sm_body: 'calc(100vh - 5rem)'
       },
       width:{
         sidebar : '70vw'

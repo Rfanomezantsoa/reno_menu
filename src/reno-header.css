@@ -15,9 +15,15 @@ a{
     @apply cursor-pointer;
 }
 .menu-tree-container .menu{
-    @apply hidden lg:block;
-    @apply absolute left-0 top-20 w-full bg-white;
+    @apply hidden lg:block ;
+    @apply absolute left-0 top-20   w-full bg-white;
     @apply lg:static lg:flex ;
+    @apply overflow-x-clip overflow-y-scroll;
+}
+@media (max-width:1024px){
+    .menu-tree-container .menu{
+        @apply h-sm_body;
+    }
 }
 .active{
     @apply block !important;
@@ -86,7 +92,7 @@ a{
 .sub-menu .link_label_container[aria-expanded="true"] .arrow_icon > *, .sub-menu .link_label_container[aria-expanded="false"] .arrow_icon > * {
     @apply rotate-0 ;
 }
-.sub-menu a{
+.tree .sub-menu a{
     @apply hover:underline;
 }
 
@@ -142,7 +148,7 @@ a{
 
 .tree .sub-menu-1 > .menu-item{
 
-    @apply lg:border-b !important;
+    @apply lg:border-b;
     @apply lg:px-0 lg:py-3;
 }
 .tree .sub-menu-1 > .menu-item > .link_label_container    {
