@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.header_min_w{
+/* .header_min_w{
     min-width: 24.625rem;
 }
 .z-100{
@@ -45,11 +45,11 @@ a{
 }  
 .menu-tree-container .sub-menu-0 {
     @apply  top-20 left-0 ;
-} 
+}  */
 /*
     LINK 
 */
-.menu-tree-container .link_label_container{
+/* .menu-tree-container .link_label_container{
     @apply flex gap-5 justify-between items-stretch py-5 px-4;
     @apply hover:bg-slate-100;
     @apply lg:rounded-md;
@@ -75,10 +75,10 @@ a{
 .link_label_container a{
     @apply  flex justify-start items-center gap-3;
     @apply hover:no-underline active:text-gray-800 text-gray-800;
-}
+} */
 
  /* arrow */
-.link_label_container .arrow_icon{
+/* .link_label_container .arrow_icon{
     @apply mr-2 ;
 }
 .link_label_container .arrow_icon > *{
@@ -101,7 +101,7 @@ a{
 /* 
  * DRROP DOWN
  */
-.r_dropdown_menu{
+/*.r_dropdown_menu{
     @apply hidden;
     @apply  transition-all duration-100 transform ;
     
@@ -110,7 +110,7 @@ a{
 .r_dropdown_menu.active{
     @apply block;
     @apply  duration-300 ;
-}
+}*/
 
 
 
@@ -118,7 +118,7 @@ a{
     Tree
 */
 
- .tree .sub-menu{
+/* .tree .sub-menu{
     @apply lg:fixed lg:top-0 lg:pt-0;
     @apply lg:h-body;
     @apply lg:w-sidebar;
@@ -173,12 +173,12 @@ a{
         
     }
 }
-
+ */
 
 /*
 * Banner
 */ 
-.tree .menu-banner{
+/* .tree .menu-banner{
     @apply hidden ;
 }
 .tree .menu-banner{
@@ -207,15 +207,15 @@ a{
 }
 .close_mega_menu{
     @apply absolute top-2 right-5;
-}
+} */
 
 /*
     PREVIOUS
 */
-.r_prevoius{
+/* .r_prevoius{
     @apply hover:bg-slate-200  mx-2 h-10 rounded-full w-10 ;
 }
-
+ */
 
 
 
@@ -223,7 +223,7 @@ a{
 * additional menu
 */
 
-.weglot-parent-menu-item .sub-menu{
+/* .weglot-parent-menu-item .sub-menu{
     @apply hidden;
  
     
@@ -255,4 +255,122 @@ a{
 .menu-cta-container .sub-menu a{
     @apply bg-white ;
     box-shadow: 0px 0px 17px 0px rgb(199, 199, 199);
+} */
+
+
+/**
+*** HEADER STRUCTURE
+**/
+.header_zone{
+    @apply relative;
+}
+.header{
+    @apply fixed left-0 right-0;
+}
+.header_wrapper{
+    @apply flex items-stretch justify-between gap-3 ;
+    min-width: 16rem;
+}
+.header_col{
+    @apply flex items-center;
+    @apply items-stretch;
+}
+
+
+/**
+*** NAV STRUCTURE
+**/
+.header_nav{
+    @apply flex items-center overflow-y-auto max-h-screen ;
+}
+.menu{
+   @apply  h-full flex items-center gap-3 ;
+}
+
+.sub-menu{
+    @apply absolute top-full min-w-max ;
+}
+.sub-menu .sub-menu{
+    @apply left-full;
+}
+@media (max-width:1024px){
+    .header_nav .menu{
+        @apply block absolute left-0 right-0 top-full bottom-0 ;
+        @apply min-h-screen overflow-y-scroll;
+    }
+    .header_nav .sub-menu{
+        @apply static  ;
+    }
+}
+/**
+* MEGA MENU STRUCTURE
+*/
+.tree .sub-menu .sub-menu{
+    @apply top-0;
+}
+.tree .sub-menu-0{
+    @apply left-0;
+}
+.tree .sub-menu-0{
+    /* @apply lg:w-1/5; */
+}
+.tree .sub-menu-1{
+    overflow-y: auto ;
+    @apply h-body;
+    @apply w-sidebar;
+    @apply bg-red-300;
+}
+.tree .sub-menu-1 .sub-menu{
+    position: unset;
+    left: unset;
+    top: unset;
+}
+
+/**
+* MGM ANIMATION
+*/
+
+.sub-menu-0 {
+    @apply transform transition duration-150 scale-y-0 origin-top;
+}
+.sub-menu-0.active{
+    @apply duration-300 scale-y-100;
+}
+
+.sub-menu-0 .sub-menu{
+    @apply hidden;
+}
+.sub-menu-0 .sub-menu.active{
+    display: unset;
+}
+
+.sub-menu-2{
+
+    @apply lg:grid lg:grid-cols-3  lg:gap-y-1 lg:gap-x-2 !important;
+}
+
+/**
+* MENU ITEM STYLE AND STRUCTUR
+*/
+.sub-menu-1 .menu-item {
+    @apply lg:relative ;
+
+}
+.menu-item  a{
+    @apply bg-white flex gap-3 py-3;
+}
+.menu-item .link_label_container{
+    @apply flex items-center justify-between gap-3;
+}
+
+.sub-menu-1  .link_label_container{
+    @apply justify-normal;
+}
+
+/**arrow*/ 
+.arrow_icon{
+    @apply rotate-90 ;
+}
+.sub-menu-0 .arrow_icon{
+    @apply lg:rotate-0;
 }
