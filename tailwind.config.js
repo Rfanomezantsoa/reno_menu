@@ -7,7 +7,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        'blue': 'blue',
+        dark : {
+          silver :"#4D4D4D",
+          green :'#2a312a'
+        },
+        light:{
+          silver :"#D9D9D9"
+        },
+        white : "#f7f7f7"
       },
       height :{
         body: 'calc(100vh - 6rem)',

@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.tree *{
+    font-family: inherit;
+}
 .header_min_w{
     min-width: 24.625rem;
 }
@@ -16,13 +19,21 @@ a{
 }
 .menu-tree-container .menu{
     @apply hidden lg:block ;
-    @apply absolute left-0 top-20   w-full bg-white;
+    @apply absolute left-0  w-full h-full bg-white;
     @apply lg:static lg:flex ;
-    @apply overflow-x-clip overflow-y-scroll;
+   
+}
+.menu-tree{
+    @apply h-full;
+}
+
+.menu-tree > menu-item{
+    @apply h-full flex justify-center;
 }
 @media (max-width:1024px){
     .menu-tree-container .menu{
         @apply h-sm_body;
+        @apply overflow-x-clip overflow-y-scroll;
     }
 }
 .active{
@@ -74,7 +85,7 @@ a{
 }
 .link_label_container a{
     @apply  flex justify-start items-center gap-3;
-    @apply hover:no-underline active:text-gray-800 text-gray-800;
+    @apply hover:no-underline text-dark-green active:text-dark-green ;
 }
 
  /* arrow */
@@ -156,7 +167,7 @@ a{
 }
 .tree .sub-menu-1 > .menu-item > .link_label_container   a {
 
-    color: rgb(167, 108, 0) !important;
+    @apply text-dark-silver !important;
 }
 .tree .sub-menu-1 > .menu-item > .link_label_container   .arrow_icon {
     @apply lg:hidden;
@@ -195,7 +206,10 @@ a{
     @apply grid;
 }
 .tree .menu-banner .menu-title{
-    @apply font-bold;
+    @apply font-bold text-dark-green;
+}
+.tree .menu-banner  .sous-title{
+    @apply text-dark-silver;
 }
 
 .tree .close_mega_menu{
@@ -229,7 +243,7 @@ a{
     
 }
 .menu-btn a{
-    background: #2A312A;
+    @apply bg-dark-green;
     color: #fff!important;
     border-radius: 5px;
     margin-left: 10px!important;
@@ -254,5 +268,5 @@ a{
 }
 .menu-cta-container .sub-menu a{
     @apply bg-white ;
-    box-shadow: 0px 0px 17px 0px rgb(199, 199, 199);
+    box-shadow: 0px 0px 17px 0px #4d4d4d4d;
 }

@@ -60,7 +60,8 @@ function nav_dropdown_init(document){
                     if(this.ariaExpanded == 'true'){ 
                         
                         close_toggle_action(this);
-                        close_overlay();
+                        if(toggle.parentElement.classList.contains('menu-item-0'))
+                            close_overlay();
                         
                     }
                     else{
@@ -86,7 +87,7 @@ function nav_dropdown_init(document){
             item.addEventListener('mouseover',function(){
                 if(nav_action() === 'mouseover'){
                 let toogle = item.querySelector('.r_dropdown_toggle');
-                if(!toogle){
+                if(!toogle && item.classList.contains('menu-item-0')){
                     close_overlay();
                 }
                 close_sibling(this);
