@@ -14,7 +14,7 @@ export default {
         light:{
           silver :"#D9D9D9"
         },
-        white : "#f7f7f7"
+     
       },
       height :{
         body: 'calc(100vh - 6rem)',
